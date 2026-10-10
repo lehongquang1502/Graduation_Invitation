@@ -1,0 +1,8 @@
+node_modules/
+.agents/
+dist/
+*.tsbuildinfo
+.vercel/
+.env
+.env.*
+!.env.example

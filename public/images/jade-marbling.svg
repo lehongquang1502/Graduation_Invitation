@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+ <defs>
+  <filter id="stone" x="0" y="0" width="100%" height="100%">
+   <feTurbulence type="fractalNoise" baseFrequency=".004 .009" numOctaves="4" seed="23"/>
+   <feColorMatrix type="matrix" values="0 0 0 0 .14 0 0 0 0 .43 0 0 0 0 .31 0 0 0 1.5 -.55"/>
+   <feGaussianBlur stdDeviation="2"/>
+  </filter>
+  <radialGradient id="mist"><stop stop-color="#fafcf3" stop-opacity=".95"/><stop offset="1" stop-color="#edf6ed" stop-opacity="0"/></radialGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="35"/></filter>
+ </defs>
+ <rect width="1600" height="1200" fill="#deede2"/>
+ <rect width="1600" height="1200" filter="url(#stone)" opacity=".53"/>
+ <g fill="#88bda6" opacity=".27" filter="url(#soft)">
+  <path d="M-80 140 Q180 20 340 320 T160 780 L-80 1050Z"/>
+  <path d="M1250-80 Q1020 140 1320 440 T1450 1100 L1720 1300V-80Z"/>
+ </g>
+ <ellipse cx="810" cy="550" rx="680" ry="660" fill="url(#mist)"/>
+ <g fill="none" stroke="#649f86" stroke-width="1.4" opacity=".15">
+  <path d="M-20 280 Q150 150 220 370 T300 650 Q200 830 370 1200"/>
+  <path d="M1320-20 Q1170 200 1380 410 T1380 800 Q1230 970 1450 1220"/>
+ </g>
+ <g fill="none" stroke="#b89c59" stroke-width="1" opacity=".22">
+  <path d="M-20 290 Q140 165 210 375 T290 650 Q190 830 360 1200"/>
+  <path d="M1330-20 Q1180 200 1390 410 T1390 800 Q1240 970 1460 1220"/>
+ </g>
+</svg>
