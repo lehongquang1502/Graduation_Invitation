@@ -17,7 +17,7 @@ const CONTACT_LINKS: ContactLink[] = [
     id: 'phone',
     label: 'Gọi điện',
     icon: <Phone size={18} />,
-    href: 'tel:+84862030929',
+    href: 'tel:0862030929',
     color: 'var(--color-pearl)',
     bg: '#2d7a54',
   },

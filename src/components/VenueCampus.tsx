@@ -28,7 +28,7 @@ export function VenueCampus() {
         </a>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+      <div className="campus-photos grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
         <figure className="m-0 overflow-hidden rounded-2xl" style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)'}}>
           <button type="button" onClick={() => openImage('/images/tdtu-campus-directions.png', t('Sơ đồ khuôn viên'))} className="block w-full campus-reference-image" aria-label={t('Mở ảnh sơ đồ khuôn viên')}>
             <img src="/images/tdtu-campus-directions.png"alt={t('Bản đồ TDTU đánh dấu tòa A, các cổng và đường đến bãi xe')} width="1641" height="878" loading="lazy" decoding="async" className="w-full h-full object-contain"/>

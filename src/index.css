@@ -285,9 +285,9 @@ footer { padding-bottom: 5rem !important; }}
 }
 
 .section-jade {
-  background: #e4efe6 url('/images/jade-marbling.webp') center / cover;
+  background: linear-gradient(#e4efe630, #e4efe630), url('/images/jade-marbling.webp') center / 100% 100%, #e4efe6;
   isolation: isolate;
-  background-size: 1600px 1200px;
+  background-size: 100% 100%;
 }
 
 .guest-notes {
@@ -347,7 +347,7 @@ body:has(.campus-image-popup[open]) { overflow: hidden; }
 
 .letter-date { margin: 1.7rem 0 1.25rem; font-size: .9rem; color: #8a713c; }
 
-.jade-opening { min-height: 100svh; display: grid; place-items: center; padding: 6rem 1.5rem 3rem; position: relative; background: #e4efe6 url('/images/jade-marbling.webp') center / 1600px 1200px; }
+.jade-opening { min-height: 100svh; display: grid; place-items: center; padding: 6rem 1.5rem 3rem; position: relative; background: linear-gradient(#e4efe630, #e4efe630), url('/images/jade-marbling.webp') center / 100% 100%, #e4efe6; }
 
 .jade-opening::before { content: ''; position: absolute; inset: 20px; border: 1px solid #a68e5050; pointer-events: none; }
 
@@ -437,3 +437,19 @@ body:has(.campus-image-popup[open]) { overflow: hidden; }
 .soundcloud-background iframe { width: 1px; height: 1px; border: 0; }
 
 .section-ivory { background: transparent; position: relative; isolation: isolate; }
+
+/* Keep text metrics stable when mobile browsers request a desktop viewport. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; color-scheme: light; }
+img, svg, iframe { max-width: 100%; }
+.invitation-letter, .event-date-copy, .campus-photos > figure { min-width: 0; }
+.invitation-letter p, .event-date-copy h2 { overflow-wrap: break-word; }
+@media (hover: none) and (pointer: coarse) {
+  .desktop-header { display: none !important; }
+  .mobile-header, .mobile-nav { display: flex !important; }
+  .event-date-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .invitation-calendar { width: 100%; max-width: 340px; margin-inline: auto; }
+  .event-date-copy { text-align: center; }
+  .campus-photos { grid-template-columns: minmax(0, 1fr); max-width: 600px; margin-inline: auto; }
+  .contact-widget { bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px)); }
+  footer { padding-bottom: calc(8rem + env(safe-area-inset-bottom, 0px)) !important; }
+}

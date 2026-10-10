@@ -43,7 +43,7 @@ export function Navbar({ isPlaying, onAudioToggle }: NavbarProps) {
   return (
     <>
       {/* ── Desktop Navbar ── */}
-      <nav className="glass-ivory fixed top-0 left-0 right-0 z-50 hidden lg:flex items-center justify-between px-8 h-16 shadow-sm">
+      <nav className="desktop-header glass-ivory fixed top-0 left-0 right-0 z-50 hidden lg:flex items-center justify-between px-8 h-16 shadow-sm">
 
         {/* Logo */}
         <div className="flex items-center gap-3 select-none">
@@ -120,7 +120,7 @@ export function Navbar({ isPlaying, onAudioToggle }: NavbarProps) {
       </nav>
 
       {/* ── Mobile Top Bar ── */}
-      <div className="glass-ivory fixed top-0 left-0 right-0 z-50 flex lg:hidden items-center justify-between px-4 h-14 shadow-sm">
+      <div className="mobile-header glass-ivory fixed top-0 left-0 right-0 z-50 flex lg:hidden items-center justify-between px-4 h-14 shadow-sm">
         <div className="flex items-center gap-2 select-none">
           <span className="nav-monogram" aria-hidden="true">Q</span>
           <span className="font-serif text-xs sm:text-sm font-semibold tracking-normal" style={{ color: 'var(--color-jade-hero)'}}>
