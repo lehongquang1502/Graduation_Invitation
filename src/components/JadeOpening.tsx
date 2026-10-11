@@ -27,7 +27,6 @@ export function JadeOpening({ onOpen }: { onOpen: () => void }) {
           <img className="jade-stone" src="/images/jade-stone.png" width="1280" height="1280" alt="" decoding="async" />
           <span className="opening-action">{t('Chạm vào ngọc để mở thiệp')}</span>
         </button>
-        <p className="opening-signature handwritten">Lê Hồng Quang</p>
       </div>
     </main>
   )

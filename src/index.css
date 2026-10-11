@@ -377,7 +377,6 @@ body:has(.campus-image-popup[open]) { overflow: hidden; }
 
 .opening-action { display: inline-block; color: var(--color-jade-deep); background: var(--color-surface); border: 1px solid var(--color-border-strong); border-radius: 999px; padding: .75rem 1.2rem; font-size: .8rem; }
 
-.opening-signature { font-size: 2rem; margin-top: 1rem; }
 
 
 
