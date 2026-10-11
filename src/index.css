@@ -136,6 +136,12 @@ html {
   color: var(--color-heading);
 }
 
+.section-heading {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #8a713c;
+  font-weight: 600;
+}
+
 body {
   font-family: var(--font-body);
   background: linear-gradient(135deg, #E5EFE9 0%, #F5F9F6 50%, #FAFBF9 100%);
@@ -365,7 +371,7 @@ body:has(.campus-image-popup[open]) { overflow: hidden; }
 
 .jade-stone { display: block; width: 100%; height: auto; transition: transform .65s ease; }
 
-.stone-shell { transition: opacity .55s ease; }
+
 
 .jade-stone-button:hover .jade-stone { transform: translateY(-4px); }
 
@@ -373,7 +379,7 @@ body:has(.campus-image-popup[open]) { overflow: hidden; }
 
 .opening-signature { font-size: 2rem; margin-top: 1rem; }
 
-.is-polishing .stone-shell { opacity: 0; }
+
 
 .is-polishing .jade-stone { transform: scale(1.06); }
 

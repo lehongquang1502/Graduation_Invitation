@@ -16,8 +16,8 @@ export function VenueCampus() {
   return (
     <div id="location" className="relative text-left">
       <div className="text-center mb-8">
-        <div className="section-label mb-3">{t('Địa điểm tổ chức')}</div>
-        <h3 className="section-title text-2xl md:text-3xl mb-3">{t('Trường Đại học Tôn Đức Thắng')}</h3>
+        <h3 className="section-heading text-2xl md:text-3xl mb-4">{t('Địa điểm tổ chức')}</h3>
+        <p className="font-serif text-xl md:text-2xl text-heading mb-3">{t('Trường Đại học Tôn Đức Thắng')}</p>
         <p className="font-body text-sm" style={{ color: 'var(--color-sub)'}}>
           {t('19 Nguyễn Hữu Thọ, Tân Phong, Quận 7, TP. Hồ Chí Minh')}
         </p>

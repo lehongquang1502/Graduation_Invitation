@@ -56,7 +56,7 @@ export function VisitorGuidelines() {
         {/* Header */}
         <div className="text-center mb-12"
         >
-          <h2 className="section-title text-3xl md:text-4xl">{t("Lưu ý dành cho khách mời")}</h2>
+          <h2 className="section-heading text-2xl md:text-3xl">{t("Lưu ý dành cho khách mời")}</h2>
           <p className="font-body text-sm mt-2 max-w-md mx-auto leading-relaxed" style={{ color: 'var(--color-sub)'}}>
             {t("Vui lòng đọc các lưu ý dưới đây trước khi đến.")}
           </p>

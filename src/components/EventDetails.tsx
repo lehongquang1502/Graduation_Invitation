@@ -80,8 +80,8 @@ export function EventDetails() {
             <p className="calendar-caption handwritten">{t('Hẹn gặp bạn ngày 17')}</p>
           </div>
           <div className="event-date-copy">
-            <div className="section-label mb-3">{t('Thời gian & địa điểm')}</div>
-            <h2 className="section-title text-3xl md:text-4xl">{t('Ngày 17 tháng 10 năm 2026')}</h2>
+            <h2 className="section-heading text-2xl md:text-3xl mb-4">{t('Thời gian & địa điểm')}</h2>
+            <p className="font-serif text-xl md:text-2xl text-heading">{t('Ngày 17 tháng 10 năm 2026')}</p>
             <p className="event-meeting-time font-serif">{t('Thứ Bảy')} <span>10:00–12:00</span></p>
             <p className="font-body text-sm mb-6">{t('Sảnh chính tòa A')}</p>
 

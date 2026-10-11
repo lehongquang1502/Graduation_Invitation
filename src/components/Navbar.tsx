@@ -1,8 +1,7 @@
 import { DisplaySettings } from './DisplaySettings'
 import { usePreferences } from '../preferences'
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Home, Calendar, AlertCircle, Music, VolumeX, Menu, X } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { Home, Calendar, AlertCircle, Music, VolumeX } from 'lucide-react'
 import { useScrollSpy } from '../hooks/useScrollSpy'
 
 const SECTION_IDS = ['home', 'schedule', 'notices']
@@ -21,23 +20,8 @@ interface NavbarProps {
 export function Navbar({ isPlaying, onAudioToggle }: NavbarProps) {
   const { t } = usePreferences()
   const activeId = useScrollSpy(SECTION_IDS)
-  const [mobileOpen, setMobileOpen] = useState(false)
-
-  useEffect(() => {
-    if (!mobileOpen) return
-    const previousOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    const closeOnEscape = (event: KeyboardEvent) => { if (event.key === 'Escape') setMobileOpen(false) }
-    window.addEventListener('keydown', closeOnEscape)
-    return () => {
-      document.body.style.overflow = previousOverflow
-      window.removeEventListener('keydown', closeOnEscape)
-    }
-  }, [mobileOpen])
-
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'})
-    setMobileOpen(false)
   }
 
   return (
@@ -137,84 +121,8 @@ export function Navbar({ isPlaying, onAudioToggle }: NavbarProps) {
           >
             {isPlaying ? <Music size={18} /> : <VolumeX size={18} />}
           </button>
-          <button
-            onClick={() => setMobileOpen(true)} aria-label={t("Mở menu")} aria-expanded={mobileOpen}
-            className="p-2 rounded-full"
-            style={{ color: 'var(--color-jade-hero)'}}
-          >
-            <Menu size={20} />
-          </button>
         </div>
       </div>
-
-      {/* ── Mobile Drawer ── */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setMobileOpen(false)}
-              className="fixed inset-0 z-[60]"
-              style={{ background: 'rgba(20,46,35,0.28)'}}
-            />
-            <motion.div
-              initial={{ x: '100%'}}
-              animate={{ x: 0 }}
-              exit={{ x: '100%'}}
-              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="fixed top-0 right-0 bottom-0 z-[70] w-72 flex flex-col"
-              style={{ background: '#e4efe6 url(/images/jade-marbling.webp) center / 1600px 1200px', borderLeft: '1px solid var(--color-border-strong)', boxShadow: '-8px 0 32px rgba(22,51,40,0.1)'}}
-            >
-              <div className="flex items-center justify-between p-6">
-                <span className="font-serif text-sm tracking-widest" style={{ color: '#8a713c'}}>
-                  MENU
-                </span>
-                <button onClick={() => setMobileOpen(false)} aria-label={t("Đóng menu")} style={{ color: 'var(--color-jade-deep)'}}>
-                  <X size={20} />
-                </button>
-              </div>
-
-              <div className="divider-gold mx-6"/>
-
-              <nav className="flex flex-col gap-1 p-4 flex-1">
-                {navItems.map((item, i) => {
-                  const Icon   = item.icon
-                  const isAct  = activeId === item.id
-                  return (
-                    <motion.button
-                      key={item.id}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.06 }}
-                      onClick={() => scrollTo(item.id)}
-                      className="flex items-center gap-4 px-4 py-3.5 rounded-xl text-left transition-all duration-200"
-                      style={
-                        {
-                              color: isAct ? 'var(--color-jade-deep)' : 'var(--color-body)',
-                              background: isAct ? 'var(--color-surface)' : 'transparent',
-                              border: isAct ? '1px solid var(--color-border)' : '1px solid transparent',
-                            }
-                      }
-                    >
-                      <Icon size={18} />
-                      <span className="font-body font-medium text-sm">{t(item.label)}</span>
-                    </motion.button>
-                  )
-                })}
-              </nav>
-
-              <div className="p-6">
-                <div className="divider-gold"/>
-                <p className="text-center font-body text-xs mt-4" style={{ color: 'var(--color-sub)'}}>
-                  17 · 10 · 2026
-                </p>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
 
       {/* ── Mobile Bottom Nav (iOS dock style) ── */}
       <nav className="mobile-nav fixed bottom-0 left-0 right-0 z-50 flex lg:hidden items-center justify-around px-2 py-2">

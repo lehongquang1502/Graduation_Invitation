@@ -31,7 +31,7 @@ export function HeroSection() {
         </p>
         <div className="divider-gold letter-divider" aria-hidden="true" />
 
-        <h1 className="section-title letter-title">{t('Lễ tốt nghiệp của')}</h1>
+        <h1 className="section-title letter-title" style={{ color: '#8a713c' }}>{t('Lễ tốt nghiệp của')}</h1>
         <p className="handwritten letter-graduate">Lê Hồng Quang</p>
         <p className="font-body letter-degree">{t('Cử nhân Khoa học máy tính')}</p>
         <p className="font-body letter-faculty">{t('Khoa Công nghệ Thông tin · Trường Đại học Tôn Đức Thắng')}</p>
