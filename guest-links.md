@@ -26,3 +26,4 @@ Mã hash giúp URL không hiện tên trực tiếp; danh sách tên vẫn nằm
 | Vân Anh | https://lhq-graduation-invitation.vercel.app/?invite=0eceb5d2c460 |
 | Nam Đặng | https://lhq-graduation-invitation.vercel.app/?invite=10fff5c80b1a |
 | Hoài Nam | https://lhq-graduation-invitation.vercel.app/?invite=c510aa6470ce |
+| Minh Trí | https://lhq-graduation-invitation.vercel.app/?invite=9c533cfb0c4c |

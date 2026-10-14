@@ -19,5 +19,6 @@ export const guests: Record<string, string> = {
   "0c880830fce8": "Gia Phương (Pino)",
   "0eceb5d2c460": "Vân Anh",
   "10fff5c80b1a": "Nam Đặng",
-  "c510aa6470ce": "Hoài Nam"
+  "c510aa6470ce": "Hoài Nam",
+  "9c533cfb0c4c": "Minh Trí"
 }
